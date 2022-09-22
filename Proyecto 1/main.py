@@ -6,6 +6,7 @@ def menu():
     print("1 - Registrar vehiculos")
     print("2 - Mostrar los vehiculos registrados")
     print("3 - Buscar vehiculo con numero de identificacion especifico")
+    print("4 - Calcular impuestos del vehiculo")
     print("0 - Salir")
     op = int(input("Seleccione la opcion deseada: "))
     return op
@@ -83,6 +84,14 @@ def main():
             elif op == 3:
                 num = int(input("Ingrese el numero de identificacion del vehiculo que desea encontrar: "))
                 buscar_vehiculo(num, vec)
+
+            elif op == 4:
+                print("Los impuestos a pagar son: ")
+                for i in vec:
+                    print("Para el auto: ", i.to_string())
+                    print("$", i.calcular_impuestos(2022))
+                    
+                
 
             elif op > 6:
                 print("*" * 40)
